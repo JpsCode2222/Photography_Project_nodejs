@@ -1,0 +1,194 @@
+<%- include('navbar.ejs')%>
+<div class="container-fluid">
+  <!--  Row 1 -->
+  <div class="row">
+    <div class="col-lg-12 d-flex align-items-strech">
+      <div class="card w-100">
+        <div class="card-body">
+          <div
+            class="d-sm-flex d-block align-items-center justify-content-between mb-9"
+          >
+            <div class="mb-3 mb-sm-0">
+              <h5 class="card-title fw-semibold">
+                Portfolio : Quality Your Photo
+              </h5>
+            </div>
+          </div>
+          <% if(!data){%>
+          <form
+            action="/admin/save_portfolio_sec2"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <div class="row">
+              <div class="col-md-6 mt-3">
+                <label>Select Image<span class="text-danger">*</span></label>
+                <input
+                  type="file"
+                  class="form-control"
+                  required
+                  name="bg_image"
+                />
+              </div>
+              <div class="col-md-6 mt-3">
+                <label>Title <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" required name="title" />
+              </div>
+              <div class="col-md-4 mt-3">
+                <label>Select Icon1<span class="text-danger">*</span></label>
+                <input type="file" class="form-control" required name="icon1" />
+              </div>
+              <div class="col-md-4 mt-3">
+                <label>Enter Heading1<span class="text-danger">*</span></label>
+                <input
+                  type="text"
+                  class="form-control"
+                  required
+                  name="heading1"
+                />
+              </div>
+              <div class="col-md-4 mt-3">
+                <label
+                  >Enter Sub-Heading1<span class="text-danger">*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  required
+                  name="subheading1"
+                />
+              </div>
+              <div class="col-md-4 mt-3">
+                <label>Select Icon2<span class="text-danger">*</span></label>
+                <input type="file" class="form-control" required name="icon2" />
+              </div>
+              <div class="col-md-4 mt-3">
+                <label>Enter Heading2<span class="text-danger">*</span></label>
+                <input
+                  type="text"
+                  class="form-control"
+                  required
+                  name="heading2"
+                />
+              </div>
+              <div class="col-md-4 mt-3">
+                <label
+                  >Enter Sub-Heading2<span class="text-danger">*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  required
+                  name="subheading2"
+                />
+              </div>
+              <div class="col-md-12 text-center mt-4">
+                <button class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </form>
+          <%}else{%>
+          <form
+            action="/admin/update_portfolio_sec2"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <div class="row">
+              <div class="col-md-6 mt-3">
+                <label>Select Image</label>
+                <input type="file" class="form-control" name="bg_image" />
+                <img src="/images/<%=data.bg_image%>" width="200px" alt="" />
+              </div>
+              <div class="col-md-6 mt-3">
+                <label>Title <span class="text-danger">*</span></label>
+                <input
+                  type="text"
+                  value="<%=data.title%>"
+                  class="form-control"
+                  required
+                  name="title"
+                />
+              </div>
+              <div class="col-md-4 mt-3">
+                <label>Select Icon1</label>
+                <input type="file" class="form-control" name="icon1" />
+                <input
+                  type="hidden"
+                  class="form-control"
+                  value="<%=data.id%>"
+                  name="id"
+                />
+                <img
+                  src="/images/<%=data.icon1%>"
+                  style="background-color: silver"
+                  width="100px"
+                  alt=""
+                />
+              </div>
+              <div class="col-md-4 mt-3">
+                <label>Enter Heading1<span class="text-danger">*</span></label>
+                <input
+                  type="text"
+                  class="form-control"
+                  required
+                  value="<%=data.heading1%>"
+                  name="heading1"
+                />
+              </div>
+              <div class="col-md-4 mt-3">
+                <label
+                  >Enter Sub-Heading1<span class="text-danger">*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  required
+                  value="<%=data.subheading1%>"
+                  name="subheading1"
+                />
+              </div>
+              <div class="col-md-4 mt-3">
+                <label>Select Icon2</label>
+                <input type="file" class="form-control" name="icon2" />
+                <img
+                  src="/images/<%=data.icon2%>"
+                  width="100px"
+                  style="background-color: silver"
+                  alt=""
+                />
+              </div>
+              <div class="col-md-4 mt-3">
+                <label>Enter Heading2<span class="text-danger">*</span></label>
+                <input
+                  type="text"
+                  class="form-control"
+                  required
+                  value="<%=data.heading2%>"
+                  name="heading2"
+                />
+              </div>
+              <div class="col-md-4 mt-3">
+                <label
+                  >Enter Sub-Heading2<span class="text-danger">*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  required
+                  name="subheading2"
+                  value="<%=data.subheading2%>"
+                />
+              </div>
+              <div class="col-md-12 text-center mt-4">
+                <button class="btn btn-primary">Update</button>
+              </div>
+            </div>
+          </form>
+          <%}%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('footer.ejs')%>

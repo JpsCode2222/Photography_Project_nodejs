@@ -1,0 +1,79 @@
+<%-include('navbar_2.ejs')%>
+
+  <!-- portfolio section -->
+
+  <section class="portfolio_section layout_padding-top">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Our Portfolio
+        </h2>
+        <p>
+          There are many variations of
+        </p>
+      </div>
+    </div>
+    <div class="portfolio_container slick-carousel">
+      <% for(var i = 0 ; i<port_list.length; i++){%>
+        <div class="box">
+          <img src="images/<%=port_list[i].image%>" alt="">
+          <div class="link-box">
+            <a href="<%=port_list[i].url%>">
+              <img src="images/link.png" alt="">
+            </a>
+            <h6>
+              <%=port_list[i].title%>
+            </h6>
+          </div>
+        </div>
+      <%}%>
+    </div>
+  </section>
+
+  <!-- end portfolio section -->
+
+  <!-- quality section -->
+
+  <section class="quality_section layout_padding" style="background-image: url(/images/<%=quality_photo.bg_image%>);">
+    <div class="container">
+      <div class="quality_container">
+        <h2>
+          Quality <br>
+          your Photo
+        </h2>
+        <div class="box">
+          <div class="detail-box">
+            <div class="img-box">
+              <img src="images/<%=quality_photo.icon1%>" alt="">
+            </div>
+            <div class="text-box">
+              <h5>
+                Professional Staff
+              </h5>
+              <p>
+                There are many variations
+                of passages
+              </p>
+            </div>
+          </div>
+          <div class="detail-box">
+            <div class="img-box">
+              <img src="images/<%=quality_photo.icon2%>" alt="">
+            </div>
+            <div class="text-box">
+              <h5>
+                Save money
+              </h5>
+              <p>
+                There are many variations
+                of passages
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end quality section -->
+<%- include('footer.ejs')%>

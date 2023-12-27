@@ -1,0 +1,55 @@
+<%- include('navbar_2.ejs')%>
+
+
+  <!-- contact section -->
+
+  <section class="contact_section layout_padding">
+    <div class="container ">
+      <div class="">
+        <h2 class="">
+          Get In Touch
+        </h2>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+        <form action="/save_enquiry" method="post">
+          <div>
+            <input type="text" name="name" placeholder="Name" />
+          </div>
+          <div>
+            <input type="email" name="email" placeholder="Email" />
+          </div>
+          <div>
+            <input type="text" name="mobile" placeholder="Phone Number" />
+          </div>
+          <div>
+            <input type="text" class="message-box" name="message" placeholder="Message" />
+          </div>
+          <div class="d-flex">
+            <button>SEND</button>
+          </div>
+        </form>
+        </div>
+        <div class="col-md-6">
+          <div class="img-box">
+            <img src="images/contact-img.png" alt="">
+            <div class="img_overlay">
+              <h2>
+                Best <br>
+                Photo <br>
+                studio
+              </h2>
+              <a href="">
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end contact section -->
+<%- include('footer.ejs')%>

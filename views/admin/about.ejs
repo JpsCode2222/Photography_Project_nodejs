@@ -1,0 +1,79 @@
+<%- include('navbar.ejs')%>
+<div class="container-fluid">
+<!--  Row 1 -->
+<div class="row">
+  <div class="col-lg-12 d-flex align-items-strech">
+    <div class="card w-100">
+      <div class="card-body">
+        <div class="d-sm-flex d-block align-items-center justify-content-between">
+          <div class="mb-sm-0">
+            <h5 class="card-title fw-semibold">About Us</h5>
+          </div>
+        </div>
+        <!-- if about has no data means it empty so fill data otherwise update only -->
+       <% if(!about) {%>
+        <form
+        action="/admin/save_about"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <div class="row">
+        <div class="col-md-6 mt-3">
+            <label>Image 1<span class="text-danger">*</span></label>
+            <input type="file" class="form-control" required name="image1" />
+          </div>
+          <div class="col-md-6 mt-3">
+            <label>Image 2<span class="text-danger">*</span></label>
+            <input type="file" class="form-control" required name="image2" />
+          </div>
+          <div class="col-md-6 mt-3">
+            <label>Heading <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" required name="heading" />
+          </div>
+          <div class="col-md-6 mt-3">
+            <label>Sub-Heading <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" required name="subheading" />
+          </div>
+          <div class="col-md-12 text-center mt-4">
+            <button class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+       <%}else{%>
+        <form
+        action="/admin/update_about"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <div class="row">
+        <div class="col-md-6 mt-3">
+            <label>Image 1<span class="text-danger">*</span></label>
+            <input type="file" class="form-control" required name="image1" />
+            <input type="hidden" class="form-control" name="id" value="<%=about.id%>" />
+            <img src="/images/<%=about.image1%>" width="150px" alt=""></img>
+          </div>
+          <div class="col-md-6 mt-3">
+            <label>Image 2<span class="text-danger">*</span></label>
+            <input type="file" class="form-control" required name="image2" />
+            <img src="/images/<%=about.image2%>" width="150px" alt=""></img>
+          </div>
+          <div class="col-md-6 mt-3">
+            <label>Heading <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" required name="heading" value="<%=about.heading%>"/>
+          </div>
+          <div class="col-md-6 mt-3">
+            <label>Sub-Heading <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" required name="subheading" value="<%=about.subheading%>" />
+          </div>
+          <div class="col-md-12 text-center mt-4">
+            <button class="btn btn-primary">Update</button>
+          </div>
+        </div>
+      </form>
+       <%}%>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<%- include('footer.ejs')%>

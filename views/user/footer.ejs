@@ -1,0 +1,234 @@
+<!-- info section -->
+<section class="info_section layout_padding2">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="info-logo">
+          <a href="">
+            <img src="images/info-logo.png" alt="">
+          </a>
+          <p>
+            It is a long established fact that a reader will be distracted by the readable content of a page when
+            looking at its layout. The point of
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-3 offset-lg-1">
+        <div class="info-nav">
+          <h4>
+            Navigation
+          </h4>
+          <ul>
+            <li>
+              <a href="/">
+                Home
+              </a>
+            </li>
+            <li >
+              <a href="/about">
+                About
+              </a>
+            </li>
+            <li >
+              <a href="/portfolio">
+                Portfolio
+              </a>
+            </li>
+            <li >
+              <a href="/contact">
+                Contact Us
+              </a>
+            </li>
+            <li >
+              <a href="#">
+                Login
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="info-contact">
+          <h4>
+            Contact Info
+          </h4>
+          <div class="location">
+            <h6>
+              Mantain Office Address:
+            </h6>
+            <a href="">
+              <img src="images/location.png" alt="">
+              <span>
+                <%=basic_info.address%>
+              </span>
+            </a>
+          </div>
+          <div class="call">
+            <h6>
+              Customer Service:
+            </h6>
+            <a href="">
+              <img src="images/call.png" alt="">
+              <span>
+                <%=basic_info.mobile%>
+              </span>
+            </a>
+          </div>
+          <div class="call">
+            <a href="">
+              <img src="images/mail.png" alt="">
+              <span>
+                <%=basic_info.email%>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-3 offset-lg-1">
+        <div class="discover">
+          <h4>
+            Discover
+          </h4>
+          <ul>
+            <li>
+              <a href="">
+                Help
+              </a>
+            </li>
+            <li>
+              <a href="">
+                How It Works
+
+              </a>
+            </li>
+            <li>
+              <a href="">
+                subscribe
+              </a>
+            </li>
+            <li>
+              <a href="/contact">
+                Contact Us
+              </a>
+            </li>
+          </ul>
+          <div class="social-box">
+            <a href="<%=basic_info.facebook_link%>">
+              <img src="images/fb.png" alt="">
+            </a>
+            <a href="<%=basic_info.twitter_link%>">
+              <img src="images/twitter.png" alt="">
+            </a>
+            <a href="<%=basic_info.instagram_link%>">
+              <img src="images/insta.png" alt="">
+            </a>
+            <a href="<%=basic_info.linkedin_link%>">
+              <img src="images/linkedin.png" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="info_form">
+      <h4>
+        Subscribe
+      </h4>
+      <form action="">
+        <input type="text" placeholder="Enter your email">
+        <div class="d-flex justify-content-end">
+          <button>
+
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- end info_section -->
+
+
+<!-- footer section -->
+<section class="container-fluid footer_section">
+  
+  <p>
+    &copy; 2020 All Rights Reserved By Jp's Code
+    
+  </p>
+  
+</section>
+<!-- footer section -->
+
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
+<!-- end google map js -->
+
+
+<script>
+  $('.slider-for').slick({
+    autoplay: true,
+    autoplaySpeed: 3000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    asNavFor: '.slider-nav'
+  });
+  $('.slider-nav').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    asNavFor: '.slider-for',
+    dots: true,
+    centerMode: true,
+    focusOnSelect: true,
+
+  });
+</script>
+
+<script>
+  $('.slick-carousel').slick({
+    infinite: true,
+    slidesToShow: 3, // Shows a three slides at a time
+    slidesToScroll: 1, // When you click an arrow, it scrolls 1 slide at a time
+    responsive: [{
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      }
+    },
+    {
+      breakpoint: 420,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 3,
+      }
+    }
+
+    ]
+  });
+
+  {/* btn active */}
+  if(location.pathname == "/"){
+    document.getElementById('home').classList.add('active');
+  }
+   if(location.pathname == "/about"){
+    document.getElementById('about').classList.add('active');
+  }
+   if(location.pathname == "/portfolio"){
+    document.getElementById('portfolio').classList.add('active');
+  }
+   if(location.pathname == "/contact"){
+    document.getElementById('contact').classList.add('active');
+  }
+   if(location.pathname == "/login"){
+    document.getElementById('login').classList.add('active');
+  }
+</script>
+
+</body>
+
+</html>
